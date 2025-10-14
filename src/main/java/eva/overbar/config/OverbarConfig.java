@@ -1,33 +1,33 @@
-package eva.template.config;
+package eva.overbar.config;
 
-public class TemplateConfig {
+public class OverbarConfig {
 
-    private static TemplateConfig INSTANCE;
-//    private static TemplateConfig SERVER_INSTANCE;
+    private static OverbarConfig INSTANCE;
+//    private static OverbarConfig SERVER_INSTANCE;
     private static final boolean[] readSinceLastUpdate = {false, false, false, false, false, false, false};
 
-    private TemplateConfig() {}
+    private OverbarConfig() {}
 
-    public TemplateConfig(boolean hi) {
+    public OverbarConfig(boolean hi) {
 
     }
 
-    public static TemplateConfig getInstance() {
+    public static OverbarConfig getInstance() {
         if (INSTANCE == null) {
-            INSTANCE = new TemplateConfig();
+            INSTANCE = new OverbarConfig();
         }
         return INSTANCE;
     }
 
-    public void updateConfigs(TemplateConfig config) {
+    public void updateConfigs(OverbarConfig config) {
 
     }
 
-//    public static TemplateConfig getServerInstance() {
+//    public static OverbarConfig getServerInstance() {
 //        return SERVER_INSTANCE;
 //    }
 
-//    private static void setServerInstance(TemplateConfig newInstance) {
+//    private static void setServerInstance(OverbarConfig newInstance) {
 //        SERVER_INSTANCE = newInstance;
 //    }
 //    static List<String> getDef() {

@@ -1,0 +1,5 @@
+accessWidener v1 named
+accessible field net/minecraft/client/gui/Gui HOTBAR_SPRITE Lnet/minecraft/resources/ResourceLocation;
+accessible field net/minecraft/client/gui/Gui HOTBAR_SELECTION_SPRITE Lnet/minecraft/resources/ResourceLocation;
+accessible field net/minecraft/client/gui/Gui HOTBAR_OFFHAND_LEFT_SPRITE Lnet/minecraft/resources/ResourceLocation;
+accessible field net/minecraft/client/gui/Gui HOTBAR_OFFHAND_RIGHT_SPRITE Lnet/minecraft/resources/ResourceLocation;

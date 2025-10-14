@@ -1,14 +1,14 @@
-package eva.template;
+package eva.overbar;
 
-import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class TemplateClient implements ClientModInitializer {
-    public static final String MOD_ID = TemplateMain.MOD_ID + "-client";
+public class OverbarMain implements ModInitializer {
+    public static final String MOD_ID = "overbar";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
     @Override
-    public void onInitializeClient() {
+    public void onInitialize() {
         // This entrypoint is suitable for setting up client-specific logic, such as rendering.
 
     }

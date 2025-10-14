@@ -1,1 +1,1 @@
-Evarika's Template Mod
+This mod shows other players' hotbars above their nametags.
