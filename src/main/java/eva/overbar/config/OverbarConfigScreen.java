@@ -10,7 +10,7 @@ import static eva.overbar.config.OverbarConfig.getInstance;
 public class OverbarConfigScreen implements ModMenuApi {
     public static ConfigBuilder builder() {
         ConfigBuilder builder = ConfigBuilder.create()
-                .setTitle(Component.literal("Simply Dual Wielding Config"))
+                .setTitle(Component.literal("Overbar Config"))
                 .setSavingRunnable(JsonConfigHelper::writeToConfig)
                 .setEditable(true);
         OverbarConfig INSTANCE = getInstance();

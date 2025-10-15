@@ -10,7 +10,7 @@ import java.nio.file.Path;
 
 public class JsonConfigHelper {
     private static final File folder = new File("config");
-    private static File templateConfig;
+    private static File overbarConfig;
     public static Gson configGson = new GsonBuilder().setPrettyPrinting().create();
 
     public static void init() {
@@ -24,11 +24,11 @@ public class JsonConfigHelper {
             folder.mkdir();
         }
         if (folder.isDirectory()) {
-            templateConfig = new File(folder, "overbar.json");
+            overbarConfig = new File(folder, "overbar.json");
             boolean seemsValid;
-            if (templateConfig.exists()) {
+            if (overbarConfig.exists()) {
                 try {
-                    String templateConfigJson = Files.readString(Path.of(templateConfig.getPath()));
+                    String templateConfigJson = Files.readString(Path.of(overbarConfig.getPath()));
                     seemsValid = templateConfigJson.trim().startsWith("{");
                 } catch (IOException e) {
                     throw new RuntimeException(e);
@@ -36,14 +36,14 @@ public class JsonConfigHelper {
             } else {
                 seemsValid = true;
             }
-            if (!templateConfig.exists() || !seemsValid) {
+            if (!overbarConfig.exists() || !seemsValid) {
                 if (!seemsValid) {
-                    OverbarClient.LOGGER.info("Found invalid config file, creating new config file at './config/moreshieldvariants.json'.");
+                    OverbarClient.LOGGER.info("Found invalid config file, creating new config file at './config/overbar.json'.");
                 }
                 try {
-                    templateConfig.createNewFile();
+                    overbarConfig.createNewFile();
                     String json = configGson.toJson(OverbarConfig.getInstance());
-                    FileWriter writer = new FileWriter(templateConfig);
+                    FileWriter writer = new FileWriter(overbarConfig);
                     writer.write(json);
                     writer.close();
                 } catch (IOException e) {
@@ -56,7 +56,7 @@ public class JsonConfigHelper {
 
     public static void readFromConfig() {
         try {
-            OverbarConfig config = configGson.fromJson(new FileReader(templateConfig), OverbarConfig.class);
+            OverbarConfig config = configGson.fromJson(new FileReader(overbarConfig), OverbarConfig.class);
             OverbarConfig.getInstance().updateConfigs(config);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
@@ -67,7 +67,7 @@ public class JsonConfigHelper {
     public static void writeToConfig() {
         try {
             String json = configGson.toJson(OverbarConfig.getInstance());
-            FileWriter writer = new FileWriter(templateConfig, false);
+            FileWriter writer = new FileWriter(overbarConfig, false);
             writer.write(json);
             writer.close();
         } catch (IOException e) {

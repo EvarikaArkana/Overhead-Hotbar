@@ -5,6 +5,7 @@
   "mixins": [
   ],
   "client": [
+    "client.AvatarRendererMixin",
     "client.FeatureRenderDispatcherMixin",
     "client.SubmitNodeCollectionMixin"
   ],
